@@ -1,0 +1,3 @@
+[submodule "voice-memo-template-yt"]
+	path = voice-memo-template-yt
+	url = https://github.com/ErickWendel/voice-memo-template-yt
