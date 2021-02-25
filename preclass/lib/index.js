@@ -1,5 +1,5 @@
 window.onload = (function () {
-    var button = $('#button'); 
+    var button = $('.button'); 
     var mic = button.find('svg');
     var active = $('.active-wrapper');
     var stop = $('.stop-button');
