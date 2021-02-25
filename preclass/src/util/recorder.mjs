@@ -2,13 +2,11 @@ export default class Recorder {
     constructor() {
 
         this.audioType = 'audio/webm;codecs=opus';
-        this.stream = {}
         this.mediaRecorder = {}
         this.recordedBlobs = []
-        this.recordingActive = false
     }
-    _setup() {
-       
+
+    _setup() {   
         const options = { mimeType: this.audioType }
 
         if (!MediaRecorder.isTypeSupported(options.mimeType)) {
@@ -25,7 +23,7 @@ export default class Recorder {
         const options = this._setup()
         this.recordedBlobs = []
 
-        this.mediaRecorder = new MediaRecorder(stream)
+        this.mediaRecorder = new MediaRecorder(stream, options)
 
         this.mediaRecorder.onstop = (event) => {
             console.log('Recorded Blobs', this.recordedBlobs)
@@ -39,17 +37,14 @@ export default class Recorder {
 
         this.mediaRecorder.start()
         console.log(`Media Recorded started`, this.mediaRecorder)
-        this.recordingActive = true
     }
 
     async stopRecording() {
-        if (!this.recordingActive) return;
         if (this.mediaRecorder.state === "inactive") return;
 
         console.log('media recorded stopped!')
         this.mediaRecorder.stop()
 
-        this.recordingActive = false
     }
 
     getRecordingURL() {

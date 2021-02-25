@@ -3,7 +3,6 @@ export default class View {
         this.btnStart = document.getElementById('btnStart')
         this.btnStop = document.getElementById('btnStop')
         this.audioElement = document.getElementById('audio')
-
     }
 
     onRecordClick(command) {
@@ -41,7 +40,7 @@ export default class View {
 
         this.toggleAudioElement({ visible: true })
         audio.addEventListener("loadedmetadata", _ => audio.play())
-        console.log('audio', audio)
+        
     }
 
 }

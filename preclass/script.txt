@@ -1,0 +1,99 @@
+https://github.com/mdn/webaudio-examples
+
+git clone https://github.com/ErickWendel/voice-memo-template-yt
+
+show layout 
+give star 
+
+show index.html 
+
+mkdir src 
+    touch index.mjs 
+
+index.html 
+    import index.mjs
+    add audio element 
+
+touch src/view.mjs 
+    constructor 
+        add all elements 
+    configureStartRecordingButton
+    
+    onRecordClick
+    
+    toggleAudioElement
+
+touch src/controller.mjs 
+        static initialize(deps)  // all 
+        constructor({ view })
+
+        _init 
+            onStartRecording
+                console.log('started!!')
+
+            this.view.configureStartRecordingButton(this.onStartRecording.bind(this))
+
+index.mjs
+    import view 
+    import controller 
+    
+    Controller.initialize
+
+npm ci 
+npm start 
+test 
+
+touch util/media.mjs 
+    all 
+
+index.mjs 
+    import media 
+    add to initialize 
+
+controller.mjs 
+    onStartRecording call audioStream
+
+test on browser audio request 
+
+touch util/recorder.mjs 
+    constructor
+    startRecording -> signature
+    _setup
+    startRecording
+    
+    stopRecording
+
+index.mjs 
+    import recorder.mjs 
+    add controller 
+controller.mjs 
+    constructor add recorder
+    onStartRecording
+        startRecording
+test on browser and show recording 
+
+view.mjs 
+    configureStopRecordingButton
+    onStopClick
+
+controller.mjs 
+
+    onStopRecording
+        record.stop
+    _init
+        configureStopRecordingButton
+        
+test on browser 
+
+recorder.mjs 
+    getRecordingURL
+view.mjs 
+    playAudio 
+
+controller
+    onStopRecording 
+        setTimeout 
+
+
+
+
